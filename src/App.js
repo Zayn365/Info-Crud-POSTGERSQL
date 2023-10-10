@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useContext } from 'react';
 import './App.css';
+import Form from './component/Form';
+import Table from './component/Table';
+import UpdateForm from './component/UpdateForm';
+import { ContextValue } from './Context';
 
 function App() {
+  const x = useContext(ContextValue);
+  const toggleUpdate = x.toggle;
+  const users = x.users.userList;
+  const del = x.users.handleDelete;
+  const idGet = x.users.handleId;
+  console.log(x.users);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <h1>CRUD APP WITH POSTGERSQL</h1>
+       <br />
+       {toggleUpdate.toggle ? <UpdateForm toggle={toggleUpdate} /> : <Form />}
+       <Table users={users} toggle={toggleUpdate} del={del} idGet={idGet} />
     </div>
   );
 }

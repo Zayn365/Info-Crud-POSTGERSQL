@@ -32,8 +32,8 @@ const Table = ({ users, toggle, del, idGet }) => {
   };
 
   return (
-    <div>
-      <table border={1}>
+    <div className='d-flex justify-content-center'>
+      <table border={2}>
         <tr>
           <th>
             Name{' '}
@@ -61,7 +61,7 @@ const Table = ({ users, toggle, del, idGet }) => {
           </th>
           <th>
             Start Date{' '}
-            <span onClick={() => handleSort('startDate')}>
+            <span onClick={() => handleSort('start_date')}>
               {sortDirection.startDate === 'asc' ? '↑' : '↓'}
             </span>
           </th>
@@ -84,12 +84,12 @@ const Table = ({ users, toggle, del, idGet }) => {
               <td>{val.start_date}</td>
               <td>{val.salary}</td>
               <td>
-                <button onClick={() => { idGet(val.id); toggle.handleToggle(val.id); }} disabled={toggle.toggle}>
+                <button className='btn btn-success' onClick={() => { idGet(val.id); toggle.handleToggle(val.id); }} disabled={toggle.toggle}>
                   Update
                 </button>
               </td>
               <td>
-                <button onClick={() => { del(val.id); }}>Delete</button>
+                <button className='btn btn-danger' onClick={() => { del(val.id); }}>Delete</button>
               </td>
             </tr>
           );

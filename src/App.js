@@ -17,6 +17,7 @@ function App() {
        <h1>CRUD APP WITH POSTGERSQL</h1>
        <br />
        {toggleUpdate.toggle ? <UpdateForm toggle={toggleUpdate} /> : <Form />}
+       <br />
        <Table users={users} toggle={toggleUpdate} del={del} idGet={idGet} />
     </div>
   );

@@ -75,6 +75,7 @@ const Form = () => {
             required
           />
         </div>
+        <br />
         <button type="submit" className="btn btn-primary">
           Submit
         </button>

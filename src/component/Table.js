@@ -82,7 +82,7 @@ const Table = ({ users, toggle, del, idGet }) => {
               <td>{val.office}</td>
               <td>{val.experience}</td>
               <td>{val.start_date}</td>
-              <td>{val.salary}</td>
+              <td>${val.salary}</td>
               <td>
                 <button className='btn btn-success' onClick={() => { idGet(val.id); toggle.handleToggle(val.id); }} disabled={toggle.toggle}>
                   Update
